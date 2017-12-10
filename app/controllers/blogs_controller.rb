@@ -23,4 +23,24 @@ class BlogsController < ApplicationController
     end
   end
 
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+
+  def update
+    @blog = Blog.find(params[:id])
+    
+    respond_to do |format|
+      if @blog.update(params.require(:blog).permit(:title, 
+                                                        :date, 
+                                                        :author, 
+                                                        :subject, 
+                                                        :body))
+        format.html { redirect_to blogs_path, notice: 'The record was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
 end
