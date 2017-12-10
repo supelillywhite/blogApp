@@ -3,7 +3,7 @@
 <p><%= link_to  "Create New Item", new_blog_path %></p>
 
 <% @blogs.each do |blog| %>
-  <p><%= blog.title %></p>
+  <p><%= link_to blog.title, blog_path(blog.id) %></p>
   <p><%= blog.date %></p>
   <p><%= blog.author %></p>
   <p><%= blog.subject %></p>
