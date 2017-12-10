@@ -1,1 +1,5 @@
-<h1>Titles Page</h1>
+<h1>Titles</h1>
+
+<% @blogs.each do |blog| %>
+  <p><%= link_to blog.title, blog_path(blog.id) %></p>
+<% end %>
