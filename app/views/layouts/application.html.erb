@@ -10,13 +10,7 @@
 
   <body>
 
-    <div>
-      <div><%= link_to "Home", root_path %></div>
-      <div><%= link_to "Titles", titles_path %></div>
-      <div><%= link_to "Authors", authors_path %></div>
-      <div><%= link_to "Subjects", subjects_path %></div>
-      <div><%= link_to "Blog", blogs_path %></div>
-    </div>
+    <%= render "shared/nav" %>
 
     <%= yield %>
   </body>
